@@ -1,0 +1,14 @@
+<h1>Flappy Worms</h1>
+<p>Thank you for visiting our site.</p>
+What is your email address?<form action='/set_name' method='POST'>
+	<input 
+		type="text" 
+		name="email_address"
+		value=''
+		/>
+	<input
+		type='submit'
+		value="Submit"
+		/>
+	<input name='authenticity_token' type='hidden' value='<%=form_authenticity_token %>' />
+</form>
