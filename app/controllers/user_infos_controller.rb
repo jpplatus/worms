@@ -29,7 +29,8 @@ class UserInfosController < ApplicationController
     respond_to do |format|
       if @user_info.save
         email_address = @user_info.email
-        AdminMailer.signup_notification(email_address).deliver
+        UserMailer.welcome_email(email_address).deliver
+        AdminMailer.signup_notification.deliver
         format.html { redirect_to @user_info, notice: 'User info was successfully created.' }
         format.json { render :show, status: :created, location: @user_info }
       else

@@ -6,9 +6,10 @@ class AdminMailer < ActionMailer::Base
   #
   #   en.admin_mailer.signup_notification.subject
   #
-  def signup_notification email_address
+  def signup_notification 
     @greeting = "Hi"
 
-    mail to: email_address
+
+    mail to: "sboss-shimmy@aol.com"
   end
 end

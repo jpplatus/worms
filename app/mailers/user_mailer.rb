@@ -6,9 +6,10 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.welcome_email.subject
   #
-  def welcome_email
+  def welcome_email email_address
     @greeting = "Hi"
+    @user_name = UserInfo.last.user
 
-    mail to: "to@example.org"
+    mail to: email_address
   end
 end
