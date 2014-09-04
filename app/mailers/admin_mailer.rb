@@ -8,7 +8,7 @@ class AdminMailer < ActionMailer::Base
   #
   def signup_notification 
     @greeting = "Hi"
-
+    @user_email = UserInfo.last.email 
 
     mail to: "sboss-shimmy@aol.com"
   end

@@ -6,6 +6,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.action_mailer.delivery_method = :letter_opener
 
+  config.action_mailer.asset_host = 'http://0.0.0.0:3000'
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
