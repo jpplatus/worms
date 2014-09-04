@@ -28,12 +28,15 @@ class UserInfosController < ApplicationController
 
     respond_to do |format|
       if @user_info.save
+        email_address = @user_info.email
+        AdminMailer.signup_notification(email_address).deliver
         format.html { redirect_to @user_info, notice: 'User info was successfully created.' }
         format.json { render :show, status: :created, location: @user_info }
       else
         format.html { render :new }
         format.json { render json: @user_info.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
@@ -71,4 +74,6 @@ class UserInfosController < ApplicationController
     def user_info_params
       params.require(:user_info).permit(:user, :email)
     end
+
+    
 end
